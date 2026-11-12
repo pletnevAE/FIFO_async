@@ -10,6 +10,28 @@ git clone https://github.com/pletnevAE/FIFO_async.git
 
 ## Contents <!-- omit in toc -->
 
+- [Overview](#overview)
+- [Theoretical basis](#theoretical-basis)
+  - [FIFO](#fifo)
+  - [Circular buffer](#circular-buffer)
+  - [Synchronous and asynchronous FIFO](#synchronous-and-asynchronous-fifo)
+  - [Clock domain crossing and metastability](#clock-domain-crossing-and-metastability)
+  - [Flip-flop synchronizer](#flip-flop-synchronizer)
+  - [Gray code and pointers](#gray-code-and-pointers)
+  - [Full and empty detection](#full-and-empty-detection)
+  - [Status flags](#status-flags)
+  - [Standard and First-Word Fall-Through](#standard-and-first-word-fall-through)
+  - [Memory implementation](#memory-implementation)
+  - [FIFO depth and flag threshold](#fifo-depth-and-flag-threshold)
+  - [Timing constraints](#timing-constraints)
+- [Architecture](#architecture)
+- [Interface](#interface)
+  - [Parameters](#parameters)
+  - [Signals](#signals)
+- [Utilization](#utilization)
+- [Simulation](#simulation)
+- [Building the project out-of-the-box](#building-the-project-out-of-the-box)
+
 ## Overview
 
 The module implements an asynchronous FIFO bufferL the write port and read port work from two independent, unrelated clocks. It is designed for safe transfer of data streams between clock domains of FPGA-based digital systems.
